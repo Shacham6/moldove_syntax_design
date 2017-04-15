@@ -1,0 +1,61 @@
+
+
+/**
+ * A high-order programming language - A Python clone but better!
+ * it offers just yer-good ol' Python, but with C-like curly-braces
+ * when in blocks, for lambdas to be more useful. 
+ */
+class Someclass(object) { 
+    (initial_value: Int = 0) { 
+        MY_MINIMUM = 4
+        this.initial_value = (){
+            if initial_value > minimum {
+                return value
+            } else {
+                return 0
+            }
+        }()
+    }
+
+    def call_function(function_to_call: Callable) {
+        return function_to_call()
+    }
+
+
+    /**
+     * The language has the Python-3 function annotations built-in,
+     * for more coherent core reading when designing a big system.
+     *
+     * It's not type declaring - but type hinting. It's completley
+     * optional.
+     */
+    def get_five_alternative() -> Int {
+        return call_function(() {
+            return 5
+        })
+    }
+    
+    def get_five() -> Int {
+        return 5
+    }
+
+    /**
+     * Moldove offers pattern matching!
+     * The symbol '_' is automatically aliased
+     * to be the mached variable.
+     */
+    def matching_attempt(value: Int) -> Int {
+        return value match {
+            (value > 22) {
+                value
+            }
+            (_ < 7) {
+                if _ % 2 == 0 {
+                    2
+                } else {
+                    3
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+/*
+ * This is a second attempt at deciding how the language should
+ * look
+ */
+
+
+/*
+ * This is a trait. A trait is like EVERYTHING.
+ * JK LOL, but seriously - It's super important.
+ * 
+ * A class may contain methods - But only
+ * methods that are implementation 
+ * of traits, may be public.
+ *
+ * OH YES. I WENT THERE.
+ *
+ * All the other methods in a class - methods
+ * that aren't implementations - are private
+ */
+trait Counterable { 
+    get() -> Int
+    increment(amount: Int) -> Void
+    decrement(amount: Int) -> Void
+}
+
+
+trait Foo {
+    run_function(function_to_run: () -> Void) -> Void
+} 
+
+
+class CountingFoo(Counterable, Foo) {
+    /**
+     * All the fields of an object/class must be declared as fields
+     */
+    field current_amount: Int
+
+    
+    () -> CountingFoo {
+
+    }
+
+
+    get() -> Int {
+        return this.current_amount
+    }
+
+    increment(amount: Int = 1) -> Void {
+        this.current_amount += amount
+    }
+
+    decrement(amount: Int = 1) -> Void {
+        this.current_amount -= amount
+    }
+}
+
+
+
+/**
+ * That's a global function.
+ * Global functions are always public
+ */
+main(args: Array[String]) -> Void {
+    println("Praise The Sun!!")
+}
